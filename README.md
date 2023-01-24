@@ -1,2 +1,2 @@
-# k-v-store-btree
+# btree-kv-store
 An example project illustring B-tree implementation in a key-value store with numeric/non-numeric unique keys with functional and performance tests
