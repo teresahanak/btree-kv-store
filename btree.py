@@ -11,14 +11,19 @@ class BTree:
         return self.size
 
     def _add(self, current_node, key, value):
+        node = self._find_node(current_node, key)
+        if node:
+            node.insert_update_entry(key, value)
+        else:
+            self._add_recursive(current_node, key, value)
+    
+    def _add_recursive(self, current_node, key, value):
         if current_node.is_leaf():
-            len_before = len(current_node)
-            current_node.insert_entry(key, value)
-            if len(current_node) > len_before:
-                self.size += 1
+            current_node.insert_update_entry(key, value)
+            self.size += 1
         else:
             child_index = current_node.get_insert_index(key)
-            self._add(current_node.children[child_index], key, value)
+            self._add_recursive(current_node.children[child_index], key, value)
         if len(current_node) > self.split_threshold:
             parent = current_node.split()
             if current_node == self.root:
@@ -43,7 +48,6 @@ class BTree:
 
     def get_value(self, key):
         node = self._find_node(self.root, key)
-        if node is not None:
-            for i, k in enumerate(node.keys):
-                if k == key:
-                    return node.values[i]
+        if node is None:
+            return None
+        return node.get_value(key)

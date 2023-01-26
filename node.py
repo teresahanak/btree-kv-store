@@ -1,8 +1,7 @@
-
 import bisect
 
-
 class Node:
+    
     def __init__(self, keys=None, values=None, children=None, parent=None):
         self.keys = keys or []
         self.values = values or []
@@ -38,7 +37,7 @@ class Node:
             if k == key:
                 self.values[i] = value
 
-    def insert_entry(self, key, value):
+    def insert_update_entry(self, key, value):
         if self.contains_key(key):
             self._update_entry(key, value)
         else:
@@ -83,6 +82,6 @@ class Node:
         self.keys = self.keys[:split_index]
         self.values = self.values[:split_index]
         self.children = self.children[: split_index + 1]
-        insert_index = self.parent.insert_entry(key_to_move_up, value_to_move_up)
+        insert_index = self.parent.insert_update_entry(key_to_move_up, value_to_move_up)
         self.parent._insert_child(insert_index + 1, right_node)
         return self.parent
