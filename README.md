@@ -1,3 +1,3 @@
 # btree-kv-store
 ![Profile View Counter](https://komarev.com/ghpvc/?username=teresahanak) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/teresahanak/btree-kv-store) ![GitHub contributors](https://img.shields.io/github/contributors/teresahanak/btree-kv-store) ![GitHub language count](https://img.shields.io/github/languages/count/teresahanak/btree-kv-store) ![GitHub top language](https://img.shields.io/github/languages/top/teresahanak/btree-kv-store) ![GitHub last commit](https://img.shields.io/github/last-commit/teresahanak/btree-kv-store)  
-An example illustring B-tree implementation in a key-value store, with numeric or non-numeric unique keys, range look-up, and functional and performance tests
+An example illustrating B-tree implementation in a key-value store, with numeric or non-numeric unique keys, range look-up, and functional and performance tests
